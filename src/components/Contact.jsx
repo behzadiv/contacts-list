@@ -3,7 +3,7 @@ import { faUserAlt ,faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 
 const Contact = ({name,email}) => {
     return ( 
-        <div>
+        <div >
             <FontAwesomeIcon icon={faUserAlt} />
             <div>
                 <h2>{name}</h2>
