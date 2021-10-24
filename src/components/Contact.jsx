@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAlt ,faTrashAlt} from '@fortawesome/free-solid-svg-icons'
-
+import style from "./Contact.css"
 const Contact = ({name,email}) => {
     return ( 
-        <div >
-            <FontAwesomeIcon icon={faUserAlt} />
+        <div className="contactList">
+            <FontAwesomeIcon icon={faUserAlt} className="user"/>
             <div>
-                <h2>{name}</h2>
+                <h5>{name}</h5>
                 <p>{email}</p>
             </div>
-            <FontAwesomeIcon icon={faTrashAlt} />
+            <FontAwesomeIcon icon={faTrashAlt} className="delete"/>
         </div>
      );
 }

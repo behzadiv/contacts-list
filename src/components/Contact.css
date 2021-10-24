@@ -1,0 +1,31 @@
+.contactList{
+    width: 40rem;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    border-top: 1px solid rgba(148, 117, 117, 0.521);
+    border-bottom: 1px solid rgba(148, 117, 117, 0.521);
+    align-items: center;
+    padding: 10px 2px;
+}
+.contactList div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.user{
+    border: 1px solid rgba(0, 0, 0, 0.507);
+    border-radius:50%;
+    padding: 5px;
+    font-size: xx-large;
+}
+.delete{
+    color:rgba(255, 0, 0, 0.815);
+    cursor: pointer;
+    transition: all 500ms;
+}
+.delete:hover{
+    color: red;
+    transform: translateY(-4px);
+}
