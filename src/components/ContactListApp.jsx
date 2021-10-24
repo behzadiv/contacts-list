@@ -1,5 +1,7 @@
 import { useState } from "react";
 import AddContact from "./AddContactForm"
+import ContactList from "./ContactList";
+import Navbar from "./Navbar";
 
 const ContactListApp = () => {
     const[contacts,setContacts]=useState([])
@@ -14,7 +16,9 @@ const ContactListApp = () => {
     
     return ( 
         <div>
+            <Navbar />
             <AddContact addContact={addContact}/>
+            <ContactList contacts={contacts}/>
         </div>
      );
 }

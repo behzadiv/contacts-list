@@ -18,6 +18,7 @@ const AddContact = ({addContact}) => {
     return ( 
         <div>
             <form onSubmit={addContactHandler}>
+                <h2>New Contact</h2>
                 <div>
                     <label >Name</label>
                     <input type="text" onChange={nameHandler}/ >
