@@ -6,11 +6,11 @@ import Navbar from "./Navbar";
 const ContactListApp = () => {
     
     const[contacts,setContacts]=useState([])
-    const addContact =(userName,userEmail)=>{      
+    const addContact =(contact)=>{      
         const newContact = {
             id: Math.floor(Math.random()*1000),
-            name:userName,
-            email:userEmail,
+            name:contact.name,
+            email:contact.email,
         }
         setContacts([...contacts,newContact])
     }
