@@ -7,12 +7,13 @@ const ContactListApp = () => {
     
     const[contacts,setContacts]=useState([])
     const addContact =(contact)=>{      
-        const newContact = {
-            id: Math.floor(Math.random()*1000),
-            name:contact.name,
-            email:contact.email,
-        }
-        setContacts([...contacts,newContact])
+        // const newContact = {
+        //     id: Math.floor(Math.random()*1000),
+        //     name:contact.name,
+        //     email:contact.email,
+        // }
+        // setContacts([...contacts,newContact])
+        setContacts([...contacts,{id:Math.floor(Math.random()*1000), ...contact}])
     }
     const deleteHandler=(id)=>{
         console.log(id);
