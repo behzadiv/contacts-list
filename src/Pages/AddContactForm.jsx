@@ -1,16 +1,18 @@
 import { useState } from "react";
 import styles from "./AddContactForm.css"
-const AddContact = ({addContact}) => {
+const AddContact = ({addContact ,history}) => {
     
     const[contact,setContact]=useState({name:"",email:""})
     const changeHandler =(e)=>{
         setContact({...contact,[e.target.name]:e.target.value})
         //console.log(e.target.value);
     }
+    //console.log(history);
     
     const addContactHandler=(e)=>{
         e.preventDefault()
         addContact(contact)
+        history.push("/")
     }
     return ( 
         <div className="form">

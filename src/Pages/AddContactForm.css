@@ -17,17 +17,18 @@ form div label , button,h2{
 }
 form div input{
     border: 1px solid #65666844;
-    border-radius:1px;
+    border-radius:5px;
     height: 2rem;
     margin: 2px 0;
     padding: 10px 10px;
-    outline-style: none;
+    outline: none;
     
 }
 form div input:focus{
-    border: 2px solid  #65666875;;
+    border: 2px solid  #7c3aed;;
 }
 button{
+    
     background-color: rgba(89, 89, 230, 0.829);
     color: white;
     padding: 8px 15px;
