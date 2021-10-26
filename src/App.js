@@ -1,12 +1,18 @@
+import { BrowserRouter, Switch ,Route} from 'react-router-dom';
 import './App.css';
-import ContactListApp from './components/ContactListApp';
 
+import HomePage from './Pages/HomePage';
+import routes from "./routes"
 function App() {
   return (
-    <div className="App">
-      <ContactListApp/>
+    <div>
+      <h1 className="header">Contact-List App</h1>
+    <BrowserRouter>
+          <HomePage/>
+    </BrowserRouter>
     </div>
   );
 }
+
 
 export default App;
