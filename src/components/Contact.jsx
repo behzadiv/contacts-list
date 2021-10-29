@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserAlt ,faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt ,faTrashAlt,faEdit} from '@fortawesome/free-solid-svg-icons'
 import style from "./Contact.css"
 import { Link } from 'react-router-dom';
-const Contact = ({contact,deleteHandler}) => {
+const Contact = ({contact,deleteHandler,onEditHandler}) => {
     const {name,id,email}= contact
     
     return ( 
@@ -15,6 +15,7 @@ const Contact = ({contact,deleteHandler}) => {
                             <p>{email}</p>
                         </div>
                 </Link>
+            <Link to={`/edit/${id}`}><FontAwesomeIcon icon={faEdit} className="edit"  onClick={onEditHandler}/></Link>
             <FontAwesomeIcon icon={faTrashAlt} className="delete" onClick={deleteHandler}/>
             
         </div>

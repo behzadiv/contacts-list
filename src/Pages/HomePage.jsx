@@ -4,7 +4,7 @@ import ContactList from "../components/ContactList";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 import ContactDetail from "../components/ContactDetail";
-
+import EditContactForm from "../components/EditContactForm"
 const HomePage = () => {
     const[contacts,setContacts]=useState([])
     const addContact =(contact)=>{      
@@ -21,6 +21,21 @@ const HomePage = () => {
         const filterContacts =contacts.filter((contact)=>contact.id !== id)
         setContacts(filterContacts)
     }
+    const editContact =(id,editedContact)=>{
+       //console.log(id,editedContact);
+       const index = contacts.findIndex((contact)=>contact.id == id)
+       console.log(index);
+       const selectedContact = {...contacts[index]}
+       //console.log(selectedContact);
+       selectedContact.name = editedContact.name
+       selectedContact.email = editedContact.email
+       const updatedContacts = [...contacts]
+       updatedContacts[index]=selectedContact
+       console.log(updatedContacts); 
+       setContacts(updatedContacts)
+       
+    }
+    
     useEffect(()=>{
         const savedContacts= JSON.parse(localStorage.getItem("contacts"))
         if(savedContacts) setContacts(savedContacts)
@@ -34,14 +49,12 @@ const HomePage = () => {
             
             <Switch>
                 <Route path="/user/:id"  component={(props)=><ContactDetail {...props}/>} />
-                <Route path="/add" render={(props)=><AddContactForm addContact={addContact} {...props}/>} />
-                <Route path="/" exact render={()=><ContactList contacts={contacts} deleteHandler={deleteHandler}/>}/>
+                <Route path="/edit/:id" render={(props)=><EditContactForm {...props} onUpdateContact={editContact} contacts={contacts} />} />
+                <Route path="/add" render={(props)=><AddContactForm addContact={addContact} {...props}/>}  />
+                <Route path="/" exact render={(props)=><ContactList contacts={contacts} deleteHandler={deleteHandler}  {...props} onEditContact={editContact} />}/>
                 <Route  render={NotFound}/>
             </Switch>
             </section>
-            // {/* <AddContact addContact={addContact}/> */}
-            // {/* <ContactList contacts={contacts} deleteHandler={deleteHandler}/> */}
-        
      );
 }
  
