@@ -5,11 +5,11 @@ const ContactDetail = ({location}) => {
     const{contact} = location.state
     console.log(contact);
     return ( 
-        <div className="contactDetail">
-            <p>name is : {contact.name} </p>
-            <p>email is :{contact.email} </p>
-            <Link to="/">Go to contacts list</Link>
-        </div>
+        <section className="contactDetail">
+            <div><h3>Name: </h3><p>{contact.name}</p> </div>
+            <div><h3>Email: </h3><p>{contact.email}</p> </div>
+            <Link to="/" className="myLink">Go to contacts list</Link>
+        </section>
      );
 }
  

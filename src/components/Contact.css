@@ -2,7 +2,7 @@
     width: 40rem;
     margin: 10px auto;
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr 1fr;
     border-top: 1px solid rgba(148, 117, 117, 0.521);
     border-bottom: 1px solid rgba(148, 117, 117, 0.521);
     align-items: center;
@@ -27,5 +27,13 @@
 }
 .delete:hover{
     color: red;
+    transform: translateY(-4px);
+}
+.edit{
+    color:rgba(39, 126, 197, 0.815);
+    cursor: pointer;
+    transition: all 500ms;
+}
+.edit:hover{
     transform: translateY(-4px);
 }
