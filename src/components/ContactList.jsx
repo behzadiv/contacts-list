@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import EditContactForm from "./EditContactForm";
 
-const ContactList = ({contacts ,deleteHandler}) => {
+const ContactList = ({contacts ,deleteHandler,onSearchContact}) => {
     const[edit,setEdit]=useState({id:null,name:"",email:""})
     const renderContactList=()=>{
         return(contacts.length ? 
@@ -24,7 +24,7 @@ const ContactList = ({contacts ,deleteHandler}) => {
     return ( 
         <div>
             
-            <Navbar />
+            <Navbar onSearchContact={onSearchContact}/>
             {edit.id ? <EditContactForm /> : renderContactList()}
             
         </div>

@@ -5,8 +5,10 @@ import { Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 import ContactDetail from "../components/ContactDetail";
 import EditContactForm from "../components/EditContactForm"
+import Navbar from "../components/Navbar"
 const HomePage = () => {
     const[contacts,setContacts]=useState([])
+    const[filteredContacts,setFilteredContacts]=useState([])
     const addContact =(contact)=>{      
         // const newContact = {
         //     id: Math.floor(Math.random()*1000),
@@ -35,23 +37,28 @@ const HomePage = () => {
        setContacts(updatedContacts)
        
     }
+    const searchContact=(item)=>{
+        const filter =contacts.filter((contact)=>contact.name.includes(item))
+        console.log(filter);
+        setFilteredContacts(filter)
+    }
     
     useEffect(()=>{
         const savedContacts= JSON.parse(localStorage.getItem("contacts"))
         if(savedContacts) setContacts(savedContacts)
     },[])
     useEffect(()=>{
+        setFilteredContacts([...contacts])
         localStorage.setItem("contacts",JSON.stringify(contacts))
     },[contacts])
     
     return ( 
             <section>
-            
             <Switch>
                 <Route path="/user/:id"  component={(props)=><ContactDetail {...props}/>} />
                 <Route path="/edit/:id" render={(props)=><EditContactForm {...props} onUpdateContact={editContact} contacts={contacts} />} />
                 <Route path="/add" render={(props)=><AddContactForm addContact={addContact} {...props}/>}  />
-                <Route path="/" exact render={(props)=><ContactList contacts={contacts} deleteHandler={deleteHandler}  {...props} onEditContact={editContact} />}/>
+                <Route path="/" exact render={(props)=><ContactList contacts={filteredContacts} deleteHandler={deleteHandler}  {...props} onEditContact={editContact} onSearchContact={searchContact}/>}/>
                 <Route  render={NotFound}/>
             </Switch>
             </section>
