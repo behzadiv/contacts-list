@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-
+import  "./Navbar.css"
 const Navbar = ({onSearchContact}) => {
     const[item,setItem]=useState("")
     const searchHandler=(e)=>{
