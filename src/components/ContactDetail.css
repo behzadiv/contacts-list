@@ -1,11 +1,39 @@
 .contactDetail{
-    width: 40rem;
-    margin: 10px auto;
+    width: 20rem;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 10rem;
-    border: 1px solid #333;
-    box-shadow: 1px 3px 10px 1px rgba(114, 52, 52, 0.479);
+    height: 8rem;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 24px;
+    box-shadow:  15px 15px 30px #bebebe,
+                 -15px -15px 30px #ffffff;
+}
+.contactDetail div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    overflow: hidden;
+}
+
+.contactDetail p{
+    margin-left: 10px;
+    padding: 10px;
+    color: rgb(40, 71, 85);
+    font-family: cursive;
+}
+.myLink{
+    margin-top: 10px;
+    color: rgb(137, 130, 240);
+    text-decoration: underline;
+}
+.emptyMessage{
+    width: 100%;
+    margin-top:40px;
+    text-align:center;
 }
