@@ -38,7 +38,7 @@ const HomePage = () => {
        
     }
     const searchContact=(item)=>{
-        const filter =contacts.filter((contact)=>contact.name.includes(item))
+        const filter =contacts.filter((contact)=>((contact.name).toLowerCase()).includes((item).toLowerCase()))
         console.log(filter);
         setFilteredContacts(filter)
     }
