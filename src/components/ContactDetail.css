@@ -1,5 +1,5 @@
 .contactDetail{
-    width: 20rem;
+    width: 40rem;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
@@ -36,4 +36,11 @@
     width: 100%;
     margin-top:40px;
     text-align:center;
+}
+
+@media screen and (max-width:700px) {
+    .contactDetail{
+        width: 20rem;
+    } 
+    
 }

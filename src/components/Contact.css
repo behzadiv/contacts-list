@@ -37,3 +37,13 @@
 .edit:hover{
     transform: translateY(-4px);
 }
+
+@media screen and (max-width:700px) {
+    .contactList{
+        width: 20rem;
+    } 
+    .user{
+        font-size:x-large;
+        margin-right: 5px;
+    } 
+}

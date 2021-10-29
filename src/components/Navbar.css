@@ -33,3 +33,12 @@
   .navbar input:focus .searchIcon{
     color: red;
   }
+
+  @media screen and (max-width:700px) {
+    .navbar{
+      width: 20rem;  
+    }
+    .navbar h3{
+        display: none;
+    }
+  }
